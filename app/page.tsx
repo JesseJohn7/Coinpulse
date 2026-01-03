@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
+import Datatable from '@/components/Datatable'
 const page = () => {
   return (
   <main className='main-container'>
@@ -15,6 +16,7 @@ const page = () => {
       </div>
 
       <p>Trending Coins</p>
+      <Datatable data={[]} columns = {[{header:'Title'},{header:'Price'}]} />
     </section>
 
     <section className='w-full mt-7 space-y-4'>
