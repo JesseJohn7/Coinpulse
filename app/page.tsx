@@ -1,8 +1,33 @@
 import React from 'react'
 import Image from 'next/image'
 import Datatable from '@/components/Datatable'
-const page = () => {
+import { Link } from 'lucide-react'
+
+const columns : DataTableColumn<TrendingCoin>[] = [
+  {
+  header: 'name',
+  cellClassName:'name-cell',
+  cell:(coin)=>{
+      const item = coin.item
+
+      return (
+        <Link href={`/coins/${item.id}`}>
+          <Image src={item.large} alt={item.name} width={36} height={36}/>
+          <p>{item.name}</p>
+                  </Link>      
+                  )
+  }
+  {
+    header:'24hr change',
+    cellClassName:'name-cell',
+    cell:(coin) =>{
+      const item = coin.item
+    }
+  }
+}
+]
   return (
+
   <main className='main-container'>
     <section className='home-grid'>
       <div id='coin-overview'>
