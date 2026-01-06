@@ -2,6 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import Datatable from '@/components/Datatable'
 import { Link } from 'lucide-react'
+import { cn } from '@/lib/utils'
 
 const columns : DataTableColumn<TrendingCoin>[] = [
   {
@@ -23,6 +24,9 @@ const columns : DataTableColumn<TrendingCoin>[] = [
     cell:(coin) =>{
       const item = coin.item
       const change = item.data.price_change_percentage_24h.usd > 0
+      return(
+        <div className={cn('price-change',change ? 'text-green-500' : 'text-red-500')}></div>
+      )
     }
   }
 }
