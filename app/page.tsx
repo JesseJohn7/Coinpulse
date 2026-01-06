@@ -25,7 +25,13 @@ const columns : DataTableColumn<TrendingCoin>[] = [
       const item = coin.item
       const change = item.data.price_change_percentage_24h.usd > 0
       return(
-        <div className={cn('price-change',change ? 'text-green-500' : 'text-red-500')}></div>
+        <div className={cn('price-change',change ? 'text-green-500' : 'text-red-500')}>
+          <p>
+            {isTrendingUp ? (
+              
+            )}
+          </p>
+        </div>
       )
     }
   }
