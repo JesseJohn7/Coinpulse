@@ -22,6 +22,7 @@ const columns : DataTableColumn<TrendingCoin>[] = [
     cellClassName:'name-cell',
     cell:(coin) =>{
       const item = coin.item
+      const change = item.data.price_change_percentage_24h.usd > 0
     }
   }
 }
